@@ -1,0 +1,43 @@
+@import "./main/vars.scss";
+
+.card{
+    border: 3px solid #BDAE82;
+    max-width: 33%;
+    flex: 1 0 33%;
+    text-align: center;
+    margin: 0 10px;
+
+    &__title{
+        font-family: $secondary-font;
+        font-size: 28px;
+        font-weight: 700;
+        padding-top: 50px;
+        padding-bottom: 40px;
+    }
+    &__price{
+        font-family: $secondary-font;
+        font-size: 24px;
+        font-weight: 700;
+        color: $third-color;
+        padding-bottom: 20px;
+    }
+    &__description{
+        line-height: 36px;
+
+    }
+    &__button{
+        width: 220px;
+        background: #BDAE82;
+        font-size: 20px;
+        color: $primary-color;
+        padding: 15px 0;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        transition: 0.25s;
+
+        &:hover{
+            box-shadow: 0 0.5em 0.5em -0.4em #bdae82;
+            transform: translatey(-0.65em);
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@import "./main/vars.scss";
+
+.skills__item {
+    text-align: center;
+    max-width: 20.5%;
+    margin-bottom: 50px;
+    color: $secondary-color;
+}
+.skills__img{
+    padding-bottom: 35px;
+}
+.skills__name{
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+.skills__description{
+    padding-bottom: 30px;
+}

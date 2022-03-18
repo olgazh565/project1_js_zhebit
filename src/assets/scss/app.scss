@@ -1,2 +1,15 @@
+//основные стили
+@import "./main/stylesheet.scss";
+@import "./main/reset.scss";
+@import "./main/vars.scss";
 @import "./main/main.scss";
-@import "./components/swiper.scss";
+
+//стили компонентов
+@import "./components/header.scss";
+@import "./components/skills.scss";
+@import "./components/skills_item.scss";
+@import "./components/portfolio.scss";
+@import "./components/prices.scss";
+@import "./components/prices_item.scss";
+@import "./components/form.scss";
+@import "./components/footer.scss";

@@ -1,0 +1,36 @@
+@import "./main/vars.scss";
+
+.skills__title{
+    margin-top: 150px;
+    margin-bottom: 70px;
+    font-family: $secondary-font;
+    font-size: 40px;    
+    color: $third-color;
+    text-align: center;
+
+}
+.skills__title span{
+    position: relative;
+}
+.skills__title span::before{
+    content: "";
+    width: 270px;
+    height: 2px;
+    background: $third-color;
+    position: absolute;
+    left: 130px;
+    top: 50%;
+}
+.skills__title span::after{
+    content: "";
+    width: 270px;
+    height: 2px;
+    background: $third-color;
+    position: absolute;
+    right: 130px;
+    top: 50%;
+}
+.skills__items {
+    display: flex;
+    justify-content: space-between;
+}

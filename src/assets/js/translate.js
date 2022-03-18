@@ -1,4 +1,3 @@
-console.log('Hello world!');
 const langArray = {
     'en': {
       'skills': 'Skills',
@@ -81,43 +80,26 @@ const langArray = {
       'send-message': 'Отправить'
     }
   }
-  
-  
-  let englishLangSelected = document.querySelector('.en')
-  let russianLangSelected = document.querySelector('.ru')
+  export default langArray;
 
-  russianLangSelected.onclick = function(event){
-    event.preventDefault();  
-    let russianLang = langArray['ru'];
-    document.querySelectorAll('[text]').forEach(elem => {
-        elem.innerHTML = russianLang[elem.getAttribute('text')]
-    })
-    // localStorage.setItem('RussianLang', true)
-  }
-  englishLangSelected.onclick = function(event){
-    event.preventDefault();
-    let englishLang = langArray['en'];
-    document.querySelectorAll('[text]').forEach(elem => {
-        elem.innerHTML = englishLang[elem.getAttribute('text')]
-    })
-    // localStorage.setItem('EnglishLang', true)
-  }
+  let select = document.querySelectorAll('.nav__switch');
+
+  select.addEventListener(click, changeLanguage)
   
-//   let langSelect = document.querySelectorAll('.nav__lang_switcher');
-
-  let langSelector = document.querySelector('.nav__switch');
-
-  langSelector.onclick = function(event){
-   
-    if (event.target != englishLangSelected) {
-        englishLangSelected.classList.remove('active');
-        russianLangSelected.classList.add('active');
-      } else {
-        englishLangSelected.classList.add('active');
-        russianLangSelected.classList.remove('active');
+  function changeLanguage(){
+    let elem = document.querySelectorAll('[text]')
+    if (select.classList.contains('.en')){
+      for (let key in langArray){
+        elem.innerHTML = langArray['en'][key]
       }
+    } else { 
+        elem.innerHTML = langArray['ru'][key]
+
+    }
   }
-  
-
- 
-
+  //   }
+  // }
+  // function changeLanguage(){
+  //   let language = select.classList.contains(lang)
+  // }
+  // let selected = select.classList.contains(en)

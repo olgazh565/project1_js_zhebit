@@ -1,0 +1,67 @@
+@import "./main/vars.scss";
+
+.header{
+    background: url("../imgs/bg.png") center/cover no-repeat;
+
+    &__row{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        // flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.nav{
+    display: flex;
+
+    &__link{
+        display: inline-block;
+        color: $secondary-color;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &:hover{
+            color: $third-color;
+        }
+    }
+    &__switch{
+        padding-left: 10px;        
+    }
+}
+.nav__lang_switcher{
+    color: $secondary-color;
+}
+.nav__lang_switcher:hover{
+    color: $third-color;
+}  
+.active{
+    color: $third-color;
+}  
+.header__name{
+    margin-top: 200px;
+    font-family: $secondary-font;
+    font-size: 60px;
+    font-weight: 700;
+    padding-bottom: 50px;
+}
+.header__slogan{
+    font-size: 20px;
+    padding-bottom: 20px;
+    line-height: 40px;
+    max-width: 35%;
+}
+.header__button{
+    font-size: 20px;
+    color: $primary-color;
+    background: $third-color;
+    padding: 15px 0;
+    transition:0.25s;
+    margin-bottom: 300px;
+    width: 220px;
+
+    &:hover{
+    box-shadow: 0 0.5em 0.5em -0.4em #bdae82;
+    transform: translatey(-0.65em);
+    }
+}

@@ -1,4 +1,19 @@
-extends layout/layout 
-
-block main
-    include ./components/swiper
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet" href="./assets/css/app.css")
+    body
+        include ./components/header
+        block main
+            main.main
+                include ./components/skills
+                include ./components/portfolio
+                include ./components/prices
+                include ./components/form
+        include ./components/footer
+        script(src="./assets/js/app.js")
+        //- script(src="./assets/js/translate.js")

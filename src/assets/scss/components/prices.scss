@@ -1,0 +1,37 @@
+@import "./main/vars.scss";
+
+.prices__title{
+    margin-top: 100px;
+    margin-bottom: 80px;
+    font-family: $secondary-font;
+    font-size: 40px;    
+    color: $third-color;
+    text-align: center;
+
+}
+.prices__title span{
+    position: relative;
+}
+.prices__title span::before{
+    content: "";
+    width: 270px;
+    height: 2px;
+    background: $third-color;
+    position: absolute;
+    left: 130px;
+    top: 50%;
+}
+.prices__title span::after{
+    content: "";
+    width: 270px;
+    height: 2px;
+    background: $third-color;
+    position: absolute;
+    right: 130px;
+    top: 50%;
+}
+.prices__cards{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}

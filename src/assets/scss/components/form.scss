@@ -1,0 +1,74 @@
+@import "./main/vars.scss";
+
+.form__background{
+    background: url("../imgs/bg2.jpg") center/cover no-repeat;
+}
+.form__background .container{
+    display: flex;
+    justify-content: flex-end;
+}
+.form__container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;     
+    max-width: 35%;
+}
+.form__contact{
+    display: flex;
+    flex-direction: column;   
+}
+.form__title{
+    font-family: $secondary-font;
+    color: $third-color;
+    font-size: 40px;
+    font-weight: 700;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+.form__email_phone{
+    border: 2px solid #BDAE82;
+    width: 450px;
+    height: 50px;
+    color: $secondary-color;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.form__email_phone::placeholder{
+    font-size: 20px;
+    color: $third-color;
+    // padding: 5px 10px;
+}
+.form__message{
+    border: 2px solid #BDAE82;
+    width: 450px;
+    color: $secondary-color;
+    font-size: 20px;
+    height: 100px;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    padding-left: 25px;
+    padding-right: 25px;
+    resize: none;
+}
+.form__message::placeholder{
+    font-size: 20px;
+    color: $third-color;
+    font-family: $primary-font;
+    padding-top: 5px;
+}
+.form__button{
+    width: 220px;
+    height: 55px;
+    font-size: 20px;
+    background: $third-color;
+    margin-bottom: 200px;
+    transition:0.25s;
+
+    &:hover{
+        box-shadow: 0 0.5em 0.5em -0.4em #bdae82;
+        transform: translatey(-0.65em);
+    }
+}
