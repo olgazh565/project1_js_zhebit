@@ -81,43 +81,180 @@ const langArray = {
       'send-message': 'Отправить'
     }
   }
-  
-  
-  let englishLangSelected = document.querySelector('.en')
-  let russianLangSelected = document.querySelector('.ru')
+    // ПЕРЕВОД ТЕКТСА
 
-  russianLangSelected.onclick = function(event){
-    event.preventDefault();  
-    let russianLang = langArray['ru'];
-    document.querySelectorAll('[text]').forEach(elem => {
-        elem.innerHTML = russianLang[elem.getAttribute('text')]
-    })
-    // localStorage.setItem('RussianLang', true)
-  }
-  englishLangSelected.onclick = function(event){
-    event.preventDefault();
-    let englishLang = langArray['en'];
-    document.querySelectorAll('[text]').forEach(elem => {
-        elem.innerHTML = englishLang[elem.getAttribute('text')]
-    })
-    // localStorage.setItem('EnglishLang', true)
-  }
+const englishLangButton = document.querySelector('.en')
+const russianLangButton = document.querySelector('.ru')
+
+russianLangButton.onclick = function(event){
+  event.preventDefault();  
+  let russianLang = langArray['ru'];
+  document.querySelectorAll('[text]').forEach(elem => {
+    elem.innerHTML = russianLang[elem.getAttribute('text')]
+  })
+  localStorage.setItem('russianLangOn', true)
+}
+englishLangButton.onclick = function(event){
+  event.preventDefault();
+  let englishLang = langArray['en'];
+  document.querySelectorAll('[text]').forEach(elem => {
+    elem.innerHTML = englishLang[elem.getAttribute('text')]
+  })
+  localStorage.setItem('russianLangOn', false)
+}
   
-//   let langSelect = document.querySelectorAll('.nav__lang_switcher');
+const langSelector = document.querySelector('.nav__lang_switch');
 
-  let langSelector = document.querySelector('.nav__switch');
-
-  langSelector.onclick = function(event){
+langSelector.onclick = function(event){
    
-    if (event.target != englishLangSelected) {
-        englishLangSelected.classList.remove('active');
-        russianLangSelected.classList.add('active');
-      } else {
-        englishLangSelected.classList.add('active');
-        russianLangSelected.classList.remove('active');
-      }
+  if (event.target != englishLangButton) {
+    englishLangButton.classList.remove('active');
+    russianLangButton.classList.add('active');
+  } else {
+    englishLangButton.classList.add('active');
+    russianLangButton.classList.remove('active');
   }
+}
   
+document.addEventListener('DOMContentLoaded', chooseLanguage)
 
- 
+function chooseLanguage(){
+  if (localStorage.getItem('russianLangOn') === 'true'){
+    russianLangButton.click()
+  } else{
+    englishLangButton.click()
+  }
+} 
 
+// СМЕНА БЛОКОВ КАРТИНОК
+
+const buttonWinter = document.querySelector('.winter');
+const buttonSpring = document.querySelector('.spring');
+const buttonSummer = document.querySelector('.summer');
+const buttonAutumn = document.querySelector('.autumn');
+
+const portfolioBlocks = document.querySelectorAll('.portfolio__wrap')
+
+buttonWinter.onclick = function(event){
+  document.querySelector('.portfolio__button.selected').classList.remove('selected');
+  document.querySelector('.portfolio__wrap.selected').classList.remove('selected');
+  event.target.classList.add('selected');
+  for (let elem of portfolioBlocks){
+    if (elem.getAttribute('id') === 'winter'){
+      elem.classList.add('selected')
+    }
+  }
+}
+buttonSpring.onclick = function(event){
+  document.querySelector('.portfolio__button.selected').classList.remove('selected');
+  document.querySelector('.portfolio__wrap.selected').classList.remove('selected');
+  event.target.classList.add('selected');
+  for (let elem of portfolioBlocks){
+    if (elem.getAttribute('id') === 'spring'){
+      elem.classList.add('selected')
+    }
+  }
+}
+buttonSummer.onclick = function(event){
+  document.querySelector('.portfolio__button.selected').classList.remove('selected');
+  document.querySelector('.portfolio__wrap.selected').classList.remove('selected');
+  event.target.classList.add('selected');
+  for (let elem of portfolioBlocks){
+    if (elem.getAttribute('id') === 'summer'){
+      elem.classList.add('selected')
+    }
+  }
+}
+buttonAutumn.onclick = function(event){
+  document.querySelector('.portfolio__button.selected').classList.remove('selected');
+  document.querySelector('.portfolio__wrap.selected').classList.remove('selected');
+  event.target.classList.add('selected');
+  for (let elem of portfolioBlocks){
+    if (elem.getAttribute('id') === 'autumn'){
+      elem.classList.add('selected')
+    }
+  }
+}
+
+// Смена темы страницы с темной на светлую
+
+const lightThemeButton = document.querySelector('.nav__light_switch')
+const darkThemeButton = document.querySelector('.nav__dark_switch')
+const blackElements = document.querySelectorAll('.change-theme')
+const goldElements = document.querySelectorAll('.change-theme-gold')
+const background = document.querySelector('html')
+const darkThemeImg = document.querySelector('.nav__dark_switch img')
+const lightThemeImg = document.querySelector('.nav__light_switch img')
+const pseudoElements = document.querySelectorAll('h2 span')
+const portfolioActiveButton = document.querySelector('.portfolio__button.selected')
+
+darkThemeButton.addEventListener('click', changeToDarkTheme)
+
+function changeToDarkTheme(event){
+  event.preventDefault()
+  background.style.background = '#000000';
+  for (let elem of blackElements){
+    elem.style.cssText = 'color: #ffffff; font-weight: 400;' 
+  }
+  for (let elem of goldElements){
+    elem.style.color = '#bdae82';
+  }
+  for (let elem of pseudoElements){
+    elem.classList.add('title_span')
+    elem.classList.remove('theme-gold-pseudoelem')
+  }
+  lightThemeImg.setAttribute('src', './assets/imgs/sun.svg')
+  darkThemeImg.setAttribute('src', './assets/imgs/moon_g.svg')
+  
+  localStorage.setItem('lightThemeOn', false)
+  
+  darkThemeButton.style.display = 'none';
+  lightThemeButton.style.display = 'block';
+
+  // portfolioActiveButton.style.color = "#000000";
+}
+
+lightThemeButton.addEventListener('click', changeToLightTheme)
+
+function changeToLightTheme(event){
+  event.preventDefault()
+
+  background.style.background = '#ffffff';
+  for (let elem of blackElements){
+    elem.style.cssText = 'color: #000000; font-weight: 700;'
+  }
+  for (let elem of goldElements){
+    elem.style.color = '#000000';
+  }
+  for (let elem of pseudoElements){
+    elem.classList.remove('title_span')
+    elem.classList.add('theme-gold-pseudoelem')
+  }
+  darkThemeImg.setAttribute('src', './assets/imgs/moon.svg')
+  lightThemeImg.setAttribute('src', './assets/imgs/sun_g.svg')
+
+  localStorage.setItem('lightThemeOn', true)
+
+  darkThemeButton.style.display = 'block';
+  lightThemeButton.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', chooseTheme)
+  
+function chooseTheme(){
+  if (localStorage.getItem('lightThemeOn') === 'true'){
+    lightThemeButton.click()
+  } else{
+    darkThemeButton.click()
+  }
+}
+
+// При mouseover картинки все равно дергаются
+
+// const insta = document.querySelector('.links__instagram')
+// insta.onmouseover = function(event){
+//   event.target.setAttribute('src', './assets/imgs/instagram_g.svg')
+// }
+// insta.onmouseout = function(event){
+//   event.target.setAttribute('src', './assets/imgs/instagram.svg')
+// }

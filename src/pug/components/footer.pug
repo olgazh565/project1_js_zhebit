@@ -1,17 +1,24 @@
-.container
-    .footer
-        .footer__left
-            p &copy
-            p 2022
-            p
-                a(href="https://github.com/olgazh565?tab=repositories") github
-        .footer__links 
-            a(href="https://www.instagram.com/")
-                img(src="./assets/imgs/instagram.svg", alt="instagram") 
-            a(href="https://www.facebook.com/")
-                img(src="./assets/imgs/facebook.svg", alt="facebook") 
-            a(href="https://twitter.com/")
-                img(src="./assets/imgs/twitter.svg", alt="twitter")
-            a(href="https://www.pinterest.com")
-                img(src="./assets/imgs/pintrest.svg", alt="pintrest") 
-       
+footer.footer
+    .container
+        .footer__empty_elem
+        .footer__row
+            .footer__left
+                p &copy
+                p 2022
+                p
+                    a(href='https://github.com/olgazh565?tab=repositories' target='_blank') github
+            .foooter__copyright Rolling Scopes School
+            .footer__links.links
+                div
+                    a.links__instagram(href='https://www.instagram.com/' target='_blank')
+                        img(src='./assets/imgs/instagram.svg' alt='instagram') 
+                div
+                    a(href='https://www.facebook.com/' target='_blank')
+                        img.links__facebook(src='./assets/imgs/facebook.svg' alt='facebook') 
+                div
+                    a(href='https://twitter.com/' target='_blank')
+                        img.links__twitter(src='./assets/imgs/twitter.svg' alt='twitter')
+                div
+                    a.links_pintrest(href='https://www.pinterest.com' target='_blank')
+                        img(src='./assets/imgs/pintrest.svg' alt='pintrest') 
+        .footer__empty_elem

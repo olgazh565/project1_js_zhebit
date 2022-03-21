@@ -1,20 +1,35 @@
 @import "./main/vars.scss";
 .footer{
-    display: flex;
-    justify-content: space-between;
-    margin: 60px 0;
-
-    &__left{
-        color: $secondary-color;
-        font-size: 20px;
-        display: flex;
-        justify-content: space-between;     
-    }
-    &__{
-        display: inline-block;
-        justify-content: space-between;
-    }
+    background-color: $primary-color;  
 }
+.footer__empty_elem{
+    height: 60px;
+    @media(max-width:768px){            
+        height: 30px;
+     }   
+}
+.footer__row{
+    display: flex;
+    justify-content: space-between; 
+    @media(max-width:768px){            
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;      
+    } 
+}
+.footer__left{
+    color: $secondary-color;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between; 
+    @media(max-width:768px){            
+       margin: 0 auto;
+    }    
+}
+.footer__links{
+    display: flex;
+    justify-content: space-between;    
+}    
 .footer__left a{
     color: $secondary-color;
     font-size: 20px;
@@ -24,15 +39,46 @@
     }
 }
 .footer__left p{
-    padding-right: 20px;
-}
-.footer__links img{
-    padding-left: 30px;
-    transition:0.25s;
-
-    &:hover{
-        // box-shadow: 0 0.5em 0.5em -0.4em #ffffff;
-        transform: translateY(-0.65em);
+    padding-right: 20px; 
+    @media(max-width:768px){            
+        padding: 0 10px;    
     }
 }
+.foooter__copyright{
+    font-size: 20px;
+    color: $secondary-color;
+    margin: 0 auto;
+    @media(max-width:768px){            
+        margin: 0 auto;
 
+    }
+}
+.links div{
+    // margin-left: 30px;
+    margin: 0 0 0 25px;
+    width: 28px; 
+    height: 28px;
+    @media(max-width:768px){            
+        margin: 20px 15px;
+    }
+}
+.links div a{
+    width: 28px; 
+    height: 28px; 
+    margin: 0 auto; 
+    @media(max-width:768px){            
+        margin: 0;
+    }   
+}
+.links__instagram:hover{
+    content: url('../imgs/instagram_g.svg');
+}
+.links__facebook:hover{
+    content: url('../imgs/facebook_g.svg');   
+}
+.links__twitter:hover{
+    content: url('../imgs/twitter_g.svg');   
+}
+.links_pintrest:hover{
+    content: url('../imgs/pintrest_g.svg');
+}    

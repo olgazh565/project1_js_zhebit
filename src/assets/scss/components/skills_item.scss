@@ -5,14 +5,29 @@
     max-width: 20.5%;
     margin-bottom: 50px;
     color: $secondary-color;
+    @media(max-width:768px){
+        max-width: 44%;
+        line-height: 22px;
+    }
+    @media(max-width:525px){
+        max-width: 49.5%;
+        line-height: 22px;
+    }
 }
 .skills__img{
     padding-bottom: 35px;
 }
 .skills__name{
     font-size: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 30px; 
+    @media(max-width:525px){
+        align-self: baseline;
+    }
 }
 .skills__description{
     padding-bottom: 30px;
+    @media(max-width:768px){
+       font-size: 18px;
+       line-height: 22px;
+    }
 }

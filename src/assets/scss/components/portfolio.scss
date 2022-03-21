@@ -7,34 +7,17 @@
     font-size: 40px;    
     color: $third-color;
     text-align: center;
-
-}
-.portfolio__title span{
-    position: relative;
-}
-.portfolio__title span::before{
-    content: "";
-    width: 270px;
-    height: 2px;
-    background: $third-color;
-    position: absolute;
-    left: 200px;
-    top: 50%;
-}
-.portfolio__title span::after{
-    content: "";
-    width: 270px;
-    height: 2px;
-    background: $third-color;
-    position: absolute;
-    right: 200px;
-    top: 50%;
+    @media(max-width:770px){
+        font-size: 32px; 
+    }
 }
 .portfolio__buttons{
     display: flex;
     justify-content: center;   
     margin-bottom: 70px; 
-
+    @media(max-width:770px){
+        flex-wrap: wrap; 
+    }    
 }
 .portfolio__button{
     border: 2px solid #BDAE82;
@@ -43,35 +26,70 @@
     color: $third-color;
     padding: 15px 0;
     margin: 0 3px;
-
-}
+    @media(max-width:770px){
+        max-width: 45%;
+        margin: 3px 3px;
+    }
+}    
 .portfolio__button:hover{
+    // background: $third-color;
+    // color: $primary-color;  
+    color: $secondary-color;
+}
+.portfolio__button.selected{
     background: $third-color;
     color: $primary-color;
+}
+.portfolio__wrap.selected{
+    display: block;
+}
+.portfolio__wrap{
+    display: none;
 }
 .portfolio__imgs{
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto;
     grid-gap: 15px 15px;
-    margin-bottom: 50px;
-}
+    margin-bottom: 100px;
+    @media(max-width:770px){
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto auto;
+        margin-bottom: 100px;
+    }
+}   
 .portfolio__imgs img{
     width: 100%;
     height: 100%;
+    @media(max-width:770px){        
+        margin: 0 auto;      
+    }
 }
 .portfolio__video{
-    position: relative;   
+    position: relative;
+    @media(max-width:770px){
+        margin-left: -60px;
+        margin-right: -60px;      
+    }
 }
-.portfolio__video img{
-    width: 100&;
-    height: 100%;
-   
-}
-.portfolio__video::after{
-    content: url(../imgs/play_hover.svg);
+.portfolio__video > img{
+    width: 100%;        
+    @media(max-width:770px){
+        max-width: 770px; 
+        margin: auto;                
+    }
+}    
+.portfolio__playbutton img{
     position: absolute;
     right: 50%;
     top: 50%;
-    transform: translate(50%,-50%)
+    transform: translate(50%, -50%);
+    transition: 0.4s;
+    @media(max-width:770px){
+        width: 65px;
+        height: 65px;
+    }
+}
+.portfolio__playbutton img:hover{
+    content: url(../imgs/play_hover_g.svg);
 }

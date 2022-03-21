@@ -1,20 +1,47 @@
 section 
     .container 
-        h2.portfolio__title 
-            span Portfolio
+        h2.portfolio__title.change-theme-gold
+            span.title_span Portfolio
         .portfolio__buttons
-            button.portfolio__button(text='winter') Winter 
-            button.portfolio__button(text='spring') Spring 
-            button.portfolio__button(text='summer') Summer 
-            button.portfolio__button(text='autumn') Autumn          
-        .portfolio__imgs 
-            img.portfolio__img(src="./assets/imgs/portfolio-img.png" alt="1")
-            img.portfolio__img(src="./assets/imgs/portfolio-img (1).png" alt="2")
-            img.portfolio__img(src="./assets/imgs/portfolio-img (2).png" alt="3")
-            img.portfolio__img(src="./assets/imgs/portfolio-img (3).png" alt="4")
-            img.portfolio__img(src="./assets/imgs/portfolio-img (4).png" alt="5")
-            img.portfolio__img(src="./assets/imgs/portfolio-img (5).png" alt="6")
-        h2.portfolio__title
-            span Video
+            button.portfolio__button.winter.change-theme-gold(text='winter') Winter 
+            button.portfolio__button.spring.change-theme-gold(text='spring') Spring 
+            button.portfolio__button.summer.change-theme-gold(text='summer') Summer 
+            button.portfolio__button.autumn.change-theme-gold.selected(text='autumn') Autumn          
+        .portfolio__wrap.selected(id='autumn')
+            .portfolio__imgs
+                img.portfolio__img(src="./assets/imgs/portfolio-img.png" alt="1")
+                img.portfolio__img(src="./assets/imgs/portfolio-img (1).png" alt="2")
+                img.portfolio__img(src="./assets/imgs/portfolio-img (2).png" alt="3")
+                img.portfolio__img(src="./assets/imgs/portfolio-img (3).png" alt="4")
+                img.portfolio__img(src="./assets/imgs/portfolio-img (4).png" alt="5")
+                img.portfolio__img(src="./assets/imgs/portfolio-img (5).png" alt="6")
+        .portfolio__wrap(id='spring')
+            .portfolio__imgs
+                img.portfolio__img(src="./assets/imgs/spring1.jpg" alt="1")
+                img.portfolio__img(src="./assets/imgs/spring2.jpg" alt="2")
+                img.portfolio__img(src="./assets/imgs/spring3.jpg" alt="3")
+                img.portfolio__img(src="./assets/imgs/spring4.jpg" alt="4")
+                img.portfolio__img(src="./assets/imgs/spring5.jpg" alt="5")
+                img.portfolio__img(src="./assets/imgs/spring6.jpg" alt="6") 
+        .portfolio__wrap(id='summer')
+            .portfolio__imgs
+                img.portfolio__img(src="./assets/imgs/summer1.jpg" alt="1")
+                img.portfolio__img(src="./assets/imgs/summer2.jpg" alt="2")
+                img.portfolio__img(src="./assets/imgs/summer3.jpg" alt="3")
+                img.portfolio__img(src="./assets/imgs/summer4.jpg" alt="4")
+                img.portfolio__img(src="./assets/imgs/summer5.jpg" alt="5")
+                img.portfolio__img(src="./assets/imgs/summer6.jpg" alt="6")
+        .portfolio__wrap(id='winter')
+            .portfolio__imgs
+                img.portfolio__img(src="./assets/imgs/winter1.jpg" alt="1")
+                img.portfolio__img(src="./assets/imgs/winter2.jpg" alt="2")
+                img.portfolio__img(src="./assets/imgs/winter3.jpg" alt="3")
+                img.portfolio__img(src="./assets/imgs/winter4.jpg" alt="4")
+                img.portfolio__img(src="./assets/imgs/winter5.jpg" alt="5")
+                img.portfolio__img(src="./assets/imgs/winter6.jpg" alt="6") 
+        h2.portfolio__title.change-theme-gold
+            span.title_span Video
         .portfolio__video 
             img(src="./assets/imgs/video-player.png" alt="video")
+            a(href='#').portfolio__playbutton 
+                img(src="./assets/imgs/play_hover.svg", alt="play")

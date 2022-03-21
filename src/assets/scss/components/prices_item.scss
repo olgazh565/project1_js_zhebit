@@ -2,11 +2,16 @@
 
 .card{
     border: 3px solid #BDAE82;
-    max-width: 33%;
-    flex: 1 0 33%;
+    max-width: 32%;
+    flex: 1 0 32%;
     text-align: center;
-    margin: 0 10px;
-
+    margin: 0 8px;
+    @media(max-width:770px){
+        max-width: 100%;
+        flex: 1 0 100%;
+        width: 400px;       
+        margin: 20px auto;
+    }
     &__title{
         font-family: $secondary-font;
         font-size: 28px;
@@ -34,10 +39,13 @@
         margin-top: 40px;
         margin-bottom: 40px;
         transition: 0.25s;
+        border: none;
+        outline: none;
 
         &:hover{
             box-shadow: 0 0.5em 0.5em -0.4em #bdae82;
             transform: translatey(-0.65em);
+            color: $secondary-color;
         }
     }
 }
