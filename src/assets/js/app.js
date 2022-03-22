@@ -249,12 +249,16 @@ function chooseTheme(){
   }
 }
 
-// При mouseover картинки все равно дергаются
+// Burger-menu
 
-// const insta = document.querySelector('.links__instagram')
-// insta.onmouseover = function(event){
-//   event.target.setAttribute('src', './assets/imgs/instagram_g.svg')
-// }
-// insta.onmouseout = function(event){
-//   event.target.setAttribute('src', './assets/imgs/instagram.svg')
-// }
+const openMenuButton = document.querySelector('.nav__mobile_button');
+const menu = document.querySelector('.nav__menu ')
+const closeMenuButton = document.querySelector('.nav__close_mobile')
+
+openMenuButton.onclick = function(){
+  menu.classList.add('active')
+}
+
+closeMenuButton.onclick = function(){
+  menu.classList.remove('active')
+}
