@@ -52,6 +52,9 @@
     @media(max-width:500px){
         width: 350px; 
     }
+    @media(max-width:360px){
+        width: 300px; 
+    }
 }
 .form__email_phone::placeholder{
     font-size: 20px;
@@ -68,9 +71,12 @@
     background: rgba(0, 0, 0, 0.5);
     padding-left: 25px;
     padding-right: 25px;
-    resize: none;
+    resize: none;    
     @media(max-width:500px){
         width: 350px; 
+    }
+    @media(max-width:360px){
+        width: 300px; 
     }
 }
 .form__message::placeholder{
@@ -89,10 +95,15 @@
     border: none;
     outline: none;
     @media(max-width:768px){            
-        margin-bottom: 100px;
+        margin-bottom: 90px;
         margin-left: auto;
         margin-right: auto;
-    }
+    } 
+    @media(max-width:360px){            
+        margin-bottom: 60px;
+        margin-left: auto;
+        margin-right: auto;
+    }  
     &:hover{
         box-shadow: 0 0.5em 0.5em -0.4em #bdae82;
         transform: translatey(-0.65em);
