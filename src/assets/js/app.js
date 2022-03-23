@@ -95,6 +95,7 @@ russianLangButton.onclick = function(event){
   })
   localStorage.setItem('russianLangOn', true)
 }
+
 englishLangButton.onclick = function(event){
   event.preventDefault();
   let englishLang = langArray['en'];
@@ -139,7 +140,7 @@ for (let button of seasonButtons){
       document.querySelector('.portfolio__wrap.selected').classList.remove('selected');
       event.target.classList.add('selected');
       for (let elem of portfolioBlocks){
-        if (elem.getAttribute('id') === button.getAttribute('id')){
+        if (elem.getAttribute('id') === button.getAttribute('text')){
           elem.classList.add('selected')
         }
       }
@@ -193,6 +194,7 @@ function chooseTheme(){
     darkThemeButton.click()
   }
 } 
+
 // Burger-menu
 
 const openMenuButton = document.querySelector('.nav__mobile_button');
