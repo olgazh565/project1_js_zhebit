@@ -14,13 +14,15 @@ html.light{
     background-color: $secondary-color;
 
     & .skills__title{
-        color: $primary-color;    
+        color: $primary-color;           
     }
     & .skills__name{
         color: $primary-color;
+        font-weight: 600; 
     }
     & .skills__description{
         color: $primary-color;
+        font-weight: 600; 
     }
     .portfolio__title{
         color: $primary-color;

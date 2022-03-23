@@ -215,7 +215,15 @@ function changeToDarkTheme(event){
 
   html.classList.remove('light')
 }
+document.addEventListener('DOMContentLoaded', chooseTheme)
 
+function chooseTheme(){
+  if (localStorage.getItem('lightThemeOn') === 'true'){
+    lightThemeButton.click()
+  } else{
+    darkThemeButton.click()
+  }
+} 
 // Burger-menu
 
 const openMenuButton = document.querySelector('.nav__mobile_button');
