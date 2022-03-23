@@ -12,9 +12,9 @@
       <div class="container"> 
         <div class="header__row"><a class="header__logo" href="index.html"><img src="./assets/imgs/logo.svg" alt="logo"></a>
           <menu class="nav">
-            <div class="nav__menu"> <a class="nav__link" text="skills" href="#">Skills</a><a class="nav__link" text="portfolio" href="#">Portfolio</a><a class="nav__link" text="video" href="#">Video</a><a class="nav__link" text="price" href="#">Price</a><a class="nav__link" text="contacts" href="#">Contacts</a><span class="nav__close_mobile"></span></div>
+            <div class="nav__menu"> <a class="nav__link" text="skills" href="#skills">Skills</a><a class="nav__link" text="portfolio" href="#portfolio">Portfolio</a><a class="nav__link" text="video" href="#video">Video</a><a class="nav__link" text="price" href="#price">Price</a><a class="nav__link" text="contacts" href="#contacts">Contacts</a><span class="nav__close_mobile"></span></div>
             <div class="nav__lang_switch"><a class="nav__lang_switcher en active" href="#">en </a><span>/ </span><a class="nav__lang_switcher ru" href="#">ru</a></div>
-            <div class="nav__theme_switch"> <a class="nav__light_switch" href="#"><img src="./assets/imgs/sun.svg"></a><a class="nav__dark_switch" href="#"><img src="./assets/imgs/moon_g.svg"></a></div>
+            <div class="nav__theme_switch"> <a class="nav__light_switch" href="#"><img src="./assets/imgs/sun.svg" alt="theme"></a><a class="nav__dark_switch" href="#"><img src="./assets/imgs/moon_g.svg" alt="theme"></a></div>
             <div class="nav__mobile_button"><img src="./assets/imgs/burger-menu.svg" alt="menu"></div>
           </menu>
         </div>
@@ -27,7 +27,7 @@
     </header>
     <main class="main">
       <div class="container"> 
-        <h2 class="skills__title change-theme-gold"> <span class="title_span">Skills</span></h2>
+        <h2 class="skills__title change-theme-gold"> <span class="title_span" text="skills" id="skills">Skills</span></h2>
         <div class="skills__items">                                               
           <div class="skills__item"> <img class="skills__img" src="./assets/imgs/camera.svg" alt="img">
             <p class="skills__name change-theme" text="skill-title-1">Digital photography</p>
@@ -49,7 +49,7 @@
       </div>
       <section> 
         <div class="container"> 
-          <h2 class="portfolio__title change-theme-gold"><span class="title_span">Portfolio</span></h2>
+          <h2 class="portfolio__title change-theme-gold"><span class="title_span" text="portfolio" id="portfolio">Portfolio</span></h2>
           <div class="portfolio__buttons">
             <button class="portfolio__button winter change-theme-gold" text="winter">Winter </button>
             <button class="portfolio__button spring change-theme-gold" text="spring">Spring </button>
@@ -57,7 +57,7 @@
             <button class="portfolio__button autumn change-theme-gold selected" text="autumn">Autumn          </button>
           </div>
           <div class="portfolio__wrap selected" id="autumn">
-            <div class="portfolio__imgs"><img class="portfolio__img" src="./assets/imgs/portfolio-img.png" alt="1"><img class="portfolio__img" src="./assets/imgs/portfolio-img (1).png" alt="2"><img class="portfolio__img" src="./assets/imgs/portfolio-img (2).png" alt="3"><img class="portfolio__img" src="./assets/imgs/portfolio-img (3).png" alt="4"><img class="portfolio__img" src="./assets/imgs/portfolio-img (4).png" alt="5"><img class="portfolio__img" src="./assets/imgs/portfolio-img (5).png" alt="6"></div>
+            <div class="portfolio__imgs"><img class="portfolio__img" src="./assets/imgs/portfolio-img.png" alt="1"><img class="portfolio__img" src="./assets/imgs/portfolio-img(1).png" alt="2"><img class="portfolio__img" src="./assets/imgs/portfolio-img(2).png" alt="3"><img class="portfolio__img" src="./assets/imgs/portfolio-img(3).png" alt="4"><img class="portfolio__img" src="./assets/imgs/portfolio-img(4).png" alt="5"><img class="portfolio__img" src="./assets/imgs/portfolio-img(5).png" alt="6"></div>
           </div>
           <div class="portfolio__wrap" id="spring">
             <div class="portfolio__imgs"><img class="portfolio__img" src="./assets/imgs/spring1.jpg" alt="1"><img class="portfolio__img" src="./assets/imgs/spring2.jpg" alt="2"><img class="portfolio__img" src="./assets/imgs/spring3.jpg" alt="3"><img class="portfolio__img" src="./assets/imgs/spring4.jpg" alt="4"><img class="portfolio__img" src="./assets/imgs/spring5.jpg" alt="5"><img class="portfolio__img" src="./assets/imgs/spring6.jpg" alt="6"></div>
@@ -68,12 +68,12 @@
           <div class="portfolio__wrap" id="winter">
             <div class="portfolio__imgs"><img class="portfolio__img" src="./assets/imgs/winter1.jpg" alt="1"><img class="portfolio__img" src="./assets/imgs/winter2.jpg" alt="2"><img class="portfolio__img" src="./assets/imgs/winter3.jpg" alt="3"><img class="portfolio__img" src="./assets/imgs/winter4.jpg" alt="4"><img class="portfolio__img" src="./assets/imgs/winter5.jpg" alt="5"><img class="portfolio__img" src="./assets/imgs/winter6.jpg" alt="6"></div>
           </div>
-          <h2 class="portfolio__title change-theme-gold"><span class="title_span">Video</span></h2>
+          <h2 class="portfolio__title change-theme-gold"><span class="title_span" text="video" id="video">Video</span></h2>
           <div class="portfolio__video"> <img src="./assets/imgs/video-player.png" alt="video"><a class="portfolio__playbutton" href="#"> <img src="./assets/imgs/play_hover.svg" alt="play"></a></div>
         </div>
       </section>
       <div class="container"> 
-        <h2 class="prices__title change-theme-gold"><span class="title_span">Price</span></h2>
+        <h2 class="prices__title change-theme-gold"><span class="title_span" text="price" id="price">Price</span></h2>
         <div class="prices__cards"> 
           <div class="prices__card card">
             <h3 class="card__title change-theme">Standard</h3>
@@ -110,7 +110,7 @@
       <div class="form__background"> 
         <div class="container"> 
           <div class="form__container"> 
-            <h2 class="form__title" text="contact-me">Contact me</h2>
+            <h2 class="form__title" text="contact-me" id="contacts">Contact me</h2>
             <form class="form__contact" action=""> 
               <input class="form__email_phone" type="text" placeholder="E-mail">
               <input class="form__email_phone" type="text" placeholder="Phone" maxlength="13">

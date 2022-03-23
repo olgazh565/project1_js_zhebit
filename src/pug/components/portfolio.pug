@@ -1,7 +1,7 @@
 section 
     .container 
         h2.portfolio__title.change-theme-gold
-            span.title_span Portfolio
+            span.title_span(text='portfolio' id='portfolio') Portfolio
         .portfolio__buttons
             button.portfolio__button.winter.change-theme-gold(text='winter') Winter 
             button.portfolio__button.spring.change-theme-gold(text='spring') Spring 
@@ -10,11 +10,11 @@ section
         .portfolio__wrap.selected(id='autumn')
             .portfolio__imgs
                 img.portfolio__img(src="./assets/imgs/portfolio-img.png" alt="1")
-                img.portfolio__img(src="./assets/imgs/portfolio-img (1).png" alt="2")
-                img.portfolio__img(src="./assets/imgs/portfolio-img (2).png" alt="3")
-                img.portfolio__img(src="./assets/imgs/portfolio-img (3).png" alt="4")
-                img.portfolio__img(src="./assets/imgs/portfolio-img (4).png" alt="5")
-                img.portfolio__img(src="./assets/imgs/portfolio-img (5).png" alt="6")
+                img.portfolio__img(src="./assets/imgs/portfolio-img(1).png" alt="2")
+                img.portfolio__img(src="./assets/imgs/portfolio-img(2).png" alt="3")
+                img.portfolio__img(src="./assets/imgs/portfolio-img(3).png" alt="4")
+                img.portfolio__img(src="./assets/imgs/portfolio-img(4).png" alt="5")
+                img.portfolio__img(src="./assets/imgs/portfolio-img(5).png" alt="6")
         .portfolio__wrap(id='spring')
             .portfolio__imgs
                 img.portfolio__img(src="./assets/imgs/spring1.jpg" alt="1")
@@ -40,7 +40,7 @@ section
                 img.portfolio__img(src="./assets/imgs/winter5.jpg" alt="5")
                 img.portfolio__img(src="./assets/imgs/winter6.jpg" alt="6") 
         h2.portfolio__title.change-theme-gold
-            span.title_span Video
+            span.title_span(text='video' id='video') Video
         .portfolio__video 
             img(src="./assets/imgs/video-player.png" alt="video")
             a(href='#').portfolio__playbutton 

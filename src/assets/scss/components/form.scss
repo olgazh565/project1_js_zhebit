@@ -21,7 +21,7 @@
     @media(max-width:768px){            
         // max-width: 100%; 
         align-items: center;
-    }
+    }   
 }
 .form__contact{
     display: flex;
@@ -37,6 +37,9 @@
     padding-bottom: 60px;
     @media(max-width:768px){
         font-size: 32px; 
+    }
+    @media(max-width:450px){
+        text-align: center; 
     }
 }
 .form__email_phone{
