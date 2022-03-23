@@ -87,46 +87,60 @@ const langArray = {
 const englishLangButton = document.querySelector('.en')
 const russianLangButton = document.querySelector('.ru')
 
-russianLangButton.onclick = function(event){
-  event.preventDefault();  
-  let russianLang = langArray['ru'];
-  document.querySelectorAll('[text]').forEach(elem => {
-    elem.innerHTML = russianLang[elem.getAttribute('text')]
-  })
-  localStorage.setItem('russianLangOn', true)
-}
+function translateLanguage(){
 
-englishLangButton.onclick = function(event){
-  event.preventDefault();
-  let englishLang = langArray['en'];
-  document.querySelectorAll('[text]').forEach(elem => {
-    elem.innerHTML = englishLang[elem.getAttribute('text')]
-  })
-  localStorage.setItem('russianLangOn', false)
-}
+  russianLangButton.addEventListener('click', switchToRussianLanguage)
+
+  function switchToRussianLanguage(event){
   
-const langSelector = document.querySelector('.nav__lang_switch');
+    // event.preventDefault();  
+    let russianLang = langArray['ru'];
+    document.querySelectorAll('[text]').forEach(elem => {
+      elem.innerHTML = russianLang[elem.getAttribute('text')]
+    })
 
-langSelector.onclick = function(event){
+    localStorage.setItem('russianLangOn', true)
+  }
+
+  englishLangButton.addEventListener('click', switchToEnglishLanguage)
+
+  function switchToEnglishLanguage(event){
+
+    // event.preventDefault();
+    let englishLang = langArray['en'];
+    document.querySelectorAll('[text]').forEach(elem => {
+      elem.innerHTML = englishLang[elem.getAttribute('text')]
+    })
+
+    localStorage.setItem('russianLangOn', false)
+  }
+  
+  const langSelector = document.querySelector('.nav__lang_switch');
+
+  langSelector.onclick = function(event){
    
-  if (event.target != englishLangButton) {
-    englishLangButton.classList.remove('active');
-    russianLangButton.classList.add('active');
-  } else {
-    englishLangButton.classList.add('active');
-    russianLangButton.classList.remove('active');
+    if (event.target != englishLangButton) {
+      englishLangButton.classList.remove('active');
+      russianLangButton.classList.add('active');
+    } else {
+      englishLangButton.classList.add('active');
+      russianLangButton.classList.remove('active');
+    }
   }
-}
-  
-document.addEventListener('DOMContentLoaded', chooseLanguage)
 
-function chooseLanguage(){
-  if (localStorage.getItem('russianLangOn') === 'true'){
-    russianLangButton.click()
-  } else{
-    englishLangButton.click()
+  function chooseLanguage(){
+    if (localStorage.getItem('russianLangOn') === 'true'){
+      switchToRussianLanguage()
+    } else{
+      switchToEnglishLanguage()
+    }
   }
+
+  chooseLanguage()
 } 
+
+translateLanguage()
+
 
 // СМЕНА БЛОКОВ КАРТИНОК
 
@@ -155,50 +169,58 @@ const darkThemeImg = document.querySelector('.nav__dark_switch img')
 const lightThemeImg = document.querySelector('.nav__light_switch img')
 const html = document.querySelector('html')
 
-lightThemeButton.addEventListener('click', changeToLightTheme)
+function changeTheme(){
 
-function changeToLightTheme(event){
-  event.preventDefault()
+  lightThemeButton.addEventListener('click', changeToLightTheme)
 
-  darkThemeImg.setAttribute('src', './assets/imgs/moon.svg')
-  lightThemeImg.setAttribute('src', './assets/imgs/sun_g.svg')
+  function changeToLightTheme(event){
+    // event.preventDefault()
 
-  localStorage.setItem('lightThemeOn', true)
+    html.classList.add('light')
 
-  darkThemeButton.style.display = 'block';
-  lightThemeButton.style.display = 'none';
+    darkThemeImg.setAttribute('src', './assets/imgs/moon.svg')
+    lightThemeImg.setAttribute('src', './assets/imgs/sun_g.svg')
 
-  html.classList.add('light')
-}
-darkThemeButton.addEventListener('click', changeToDarkTheme)
+    localStorage.setItem('lightThemeOn', true)
 
-function changeToDarkTheme(event){
-  event.preventDefault();
-
-  lightThemeImg.setAttribute('src', './assets/imgs/sun.svg')
-  darkThemeImg.setAttribute('src', './assets/imgs/moon_g.svg')
-  
-  localStorage.setItem('lightThemeOn', false)
-  
-  darkThemeButton.style.display = 'none';
-  lightThemeButton.style.display = 'block';
-
-  html.classList.remove('light')
-}
-document.addEventListener('DOMContentLoaded', chooseTheme)
-
-function chooseTheme(){
-  if (localStorage.getItem('lightThemeOn') === 'true'){
-    lightThemeButton.click()
-  } else{
-    darkThemeButton.click()
+    darkThemeButton.style.display = 'block';
+    lightThemeButton.style.display = 'none';    
   }
-} 
+
+  darkThemeButton.addEventListener('click', changeToDarkTheme)
+
+  function changeToDarkTheme(event){
+    // event.preventDefault();
+
+    html.classList.remove('light')
+
+    lightThemeImg.setAttribute('src', './assets/imgs/sun.svg')
+    darkThemeImg.setAttribute('src', './assets/imgs/moon_g.svg')
+  
+    localStorage.setItem('lightThemeOn', false)
+  
+    darkThemeButton.style.display = 'none';
+    lightThemeButton.style.display = 'block';    
+  }
+
+  function chooseTheme(){
+    if (localStorage.getItem('lightThemeOn') === 'true'){
+      changeToLightTheme()
+    } else{
+      changeToDarkTheme()
+    }
+  } 
+
+  chooseTheme()
+}
+
+changeTheme()
+
 
 // Burger-menu
 
 const openMenuButton = document.querySelector('.nav__mobile_button');
-const menu = document.querySelector('.nav__menu ')
+const menu = document.querySelector('.nav__menu')
 const closeMenuButton = document.querySelector('.nav__close_mobile')
 
 openMenuButton.onclick = function(){
@@ -208,3 +230,35 @@ openMenuButton.onclick = function(){
 closeMenuButton.onclick = function(){
   menu.classList.remove('active')
 }
+
+// Валидация формы
+
+const form = document.querySelector('.form__contact')
+const formInputs = form.elements
+const button = document.querySelector('.form__button')
+
+for (let element of formInputs){
+  element.oninput = function(event){
+    if (!event.target.value){
+      event.target.classList.add('error')
+    } else{
+      event.target.classList.remove('error')
+    }
+  }
+}
+
+form.onsubmit = function(event){
+  event.preventDefault()
+  for (let element of formInputs){
+    if (!element.value) {
+      element.classList.add('error')
+    } else{
+      element.classList.remove('error')
+    }
+  }
+  form.reset()
+}
+
+
+
+ 

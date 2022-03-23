@@ -64,6 +64,9 @@
     color: $third-color;
     // padding: 5px 10px;
 }
+.form__email_phone.error{
+    border: 2px solid red;
+}
 .form__message{
     border: 2px solid #BDAE82;
     width: 450px;
@@ -87,6 +90,9 @@
     color: $third-color;
     font-family: $primary-font;
     padding-top: 5px;
+}
+.form__message.error{
+    border: 2px solid red;
 }
 .form__button{
     width: 220px;

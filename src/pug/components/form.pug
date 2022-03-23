@@ -1,9 +1,9 @@
 .form__background 
     .container 
-        .form__container 
+        .form__container(action='#' method='get')
             h2.form__title(text='contact-me' id='contacts') Contact me
             form.form__contact(action="") 
-                input.form__email_phone(type='text' placeholder="E-mail" required)
-                input.form__email_phone(type='text' placeholder="Phone" required maxlength="13")
-                textarea.form__message(type='text' placeholder="Message" required)
+                input.form__email_phone(type='text' placeholder="E-mail")
+                input.form__email_phone(type='text' placeholder="Phone" maxlength="13")
+                textarea.form__message(type='text' placeholder="Message")
                 button.form__button(text='send-message') Send Message
