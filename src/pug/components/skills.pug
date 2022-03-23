@@ -1,25 +1,25 @@
 //- include ../mixins/skills_item
 
 .container 
-    h2.skills__title.change-theme-gold 
+    h2.skills__title
         span.title_span(text='skills' id='skills') Skills
     .skills__items                                                
         .skills__item 
             img.skills__img(src='./assets/imgs/camera.svg' alt="img")
-            p.skills__name.change-theme(text='skill-title-1') Digital photography
-            p.skills__description.change-theme(text='skill-text-1') High-quality photos in the studio and on the nature
+            p.skills__name(text='skill-title-1') Digital photography
+            p.skills__description(text='skill-text-1') High-quality photos in the studio and on the nature
         .skills__item 
             img.skills__img(src='./assets/imgs/video.svg' alt="img")
-            p.skills__name.change-theme(text='skill-title-2') Video shooting
-            p.skills__description.change-theme(text='skill-text-2') Capture your moments so that they always stay with you
+            p.skills__name(text='skill-title-2') Video shooting
+            p.skills__description(text='skill-text-2') Capture your moments so that they always stay with you
         .skills__item 
             img.skills__img(src="./assets/imgs/landscape.svg" alt="img")
-            p.skills__name.change-theme(text='skill-title-3') Rotouch
-            p.skills__description.change-theme(text='skill-text-3') I strive to make photography surpass reality
+            p.skills__name(text='skill-title-3') Rotouch
+            p.skills__description(text='skill-text-3') I strive to make photography surpass reality
         .skills__item 
             img.skills__img(src="./assets/imgs/mic.svg" alt="img")
-            p.skills__name.change-theme(text='skill-title-4') Audio
-            p.skills__description.change-theme(text='skill-text-4') Professional sounds recording for video, advertising, portfolio
+            p.skills__name(text='skill-title-4') Audio
+            p.skills__description(text='skill-text-4') Professional sounds recording for video, advertising, portfolio
 
 //- отключаю mixins, потому что с ними не получается
 //- перевод на другой язык

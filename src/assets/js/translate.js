@@ -81,25 +81,4 @@ const langArray = {
     }
   }
   export default langArray;
-
-  let select = document.querySelectorAll('.nav__switch');
-
-  select.addEventListener(click, changeLanguage)
   
-  function changeLanguage(){
-    let elem = document.querySelectorAll('[text]')
-    if (select.classList.contains('.en')){
-      for (let key in langArray){
-        elem.innerHTML = langArray['en'][key]
-      }
-    } else { 
-        elem.innerHTML = langArray['ru'][key]
-
-    }
-  }
-  //   }
-  // }
-  // function changeLanguage(){
-  //   let language = select.classList.contains(lang)
-  // }
-  // let selected = select.classList.contains(en)

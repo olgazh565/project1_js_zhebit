@@ -1,4 +1,5 @@
 console.log('Hello world!');
+
 const langArray = {
     'en': {
       'skills': 'Skills',
@@ -81,7 +82,7 @@ const langArray = {
       'send-message': 'Отправить'
     }
   }
-    // ПЕРЕВОД ТЕКТСА
+    // ПЕРЕВОД ТЕКСТА
 
 const englishLangButton = document.querySelector('.en')
 const russianLangButton = document.querySelector('.ru')
@@ -180,29 +181,30 @@ buttonAutumn.onclick = function(event){
 
 const lightThemeButton = document.querySelector('.nav__light_switch')
 const darkThemeButton = document.querySelector('.nav__dark_switch')
-const blackElements = document.querySelectorAll('.change-theme')
-const goldElements = document.querySelectorAll('.change-theme-gold')
-const background = document.querySelector('html')
 const darkThemeImg = document.querySelector('.nav__dark_switch img')
 const lightThemeImg = document.querySelector('.nav__light_switch img')
-const pseudoElements = document.querySelectorAll('h2 span')
-const portfolioActiveButton = document.querySelector('.portfolio__button.selected')
+const html = document.querySelector('html')
 
+lightThemeButton.addEventListener('click', changeToLightTheme)
+
+function changeToLightTheme(event){
+  event.preventDefault()
+
+  darkThemeImg.setAttribute('src', './assets/imgs/moon.svg')
+  lightThemeImg.setAttribute('src', './assets/imgs/sun_g.svg')
+
+  localStorage.setItem('lightThemeOn', true)
+
+  darkThemeButton.style.display = 'block';
+  lightThemeButton.style.display = 'none';
+
+  html.classList.add('light')
+}
 darkThemeButton.addEventListener('click', changeToDarkTheme)
 
 function changeToDarkTheme(event){
-  event.preventDefault()
-  background.style.background = '#000000';
-  for (let elem of blackElements){
-    elem.style.cssText = 'color: #ffffff; font-weight: 400;' 
-  }
-  for (let elem of goldElements){
-    elem.style.color = '#bdae82';
-  }
-  for (let elem of pseudoElements){
-    elem.classList.add('title_span')
-    elem.classList.remove('theme-gold-pseudoelem')
-  }
+  event.preventDefault();
+
   lightThemeImg.setAttribute('src', './assets/imgs/sun.svg')
   darkThemeImg.setAttribute('src', './assets/imgs/moon_g.svg')
   
@@ -211,42 +213,7 @@ function changeToDarkTheme(event){
   darkThemeButton.style.display = 'none';
   lightThemeButton.style.display = 'block';
 
-  // portfolioActiveButton.style.color = "#000000";
-}
-
-lightThemeButton.addEventListener('click', changeToLightTheme)
-
-function changeToLightTheme(event){
-  event.preventDefault()
-
-  background.style.background = '#ffffff';
-  for (let elem of blackElements){
-    elem.style.cssText = 'color: #000000; font-weight: 700;'
-  }
-  for (let elem of goldElements){
-    elem.style.color = '#000000';
-  }
-  for (let elem of pseudoElements){
-    elem.classList.remove('title_span')
-    elem.classList.add('theme-gold-pseudoelem')
-  }
-  darkThemeImg.setAttribute('src', './assets/imgs/moon.svg')
-  lightThemeImg.setAttribute('src', './assets/imgs/sun_g.svg')
-
-  localStorage.setItem('lightThemeOn', true)
-
-  darkThemeButton.style.display = 'block';
-  lightThemeButton.style.display = 'none';
-}
-
-document.addEventListener('DOMContentLoaded', chooseTheme)
-  
-function chooseTheme(){
-  if (localStorage.getItem('lightThemeOn') === 'true'){
-    lightThemeButton.click()
-  } else{
-    darkThemeButton.click()
-  }
+  html.classList.remove('light')
 }
 
 // Burger-menu

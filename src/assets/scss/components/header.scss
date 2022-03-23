@@ -2,7 +2,8 @@
 
 .header{
     background: url("../imgs/bg.png") center/cover no-repeat;
-
+    // background-size: 100vw 110vh;
+    // background-position: top 0;
     position: relative;
     @media(max-width:768px){
         background: url("../imgs/bg_mobile.png") center no-repeat;
@@ -36,7 +37,8 @@
 }
 .nav__menu{
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
+    scroll-behavior: smooth;    
     @media(max-width:768px){
         display: none;
         // transform: translateX();

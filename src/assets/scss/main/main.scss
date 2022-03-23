@@ -8,6 +8,51 @@ html{
     line-height: 36px;
     color: $secondary-color;
     background: #000000;  
+    scroll-behavior: smooth;  
+}
+html.light{
+    background-color: $secondary-color;
+
+    & .skills__title{
+        color: $primary-color;    
+    }
+    & .skills__name{
+        color: $primary-color;
+    }
+    & .skills__description{
+        color: $primary-color;
+    }
+    .portfolio__title{
+        color: $primary-color;
+    }
+    .portfolio__button{
+        color: $primary-color;
+    }
+    .portfolio__button:hover{
+        color: $primary-color;
+    }
+    .portfolio__button.selected{
+        background: $third-color;
+        color: $primary-color;
+    }
+    .portfolio__title{
+        color: $primary-color;
+    }
+    .prices__title{
+        color: $primary-color;
+    }
+    .card__title{
+        color: $primary-color;
+    }
+    .card__description{
+        color: $primary-color;
+    }
+    .title_span::before{
+        background: $primary-color; 
+    }
+    .title_span::after{
+        background: $primary-color;
+    }
 }
 .container{
     max-width: 1400px;
