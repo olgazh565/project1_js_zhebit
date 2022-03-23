@@ -129,51 +129,20 @@ function chooseLanguage(){
 
 // СМЕНА БЛОКОВ КАРТИНОК
 
-const buttonWinter = document.querySelector('.winter');
-const buttonSpring = document.querySelector('.spring');
-const buttonSummer = document.querySelector('.summer');
-const buttonAutumn = document.querySelector('.autumn');
+const seasonButtons = document.querySelectorAll('.portfolio__button');
 
 const portfolioBlocks = document.querySelectorAll('.portfolio__wrap')
 
-buttonWinter.onclick = function(event){
-  document.querySelector('.portfolio__button.selected').classList.remove('selected');
-  document.querySelector('.portfolio__wrap.selected').classList.remove('selected');
-  event.target.classList.add('selected');
-  for (let elem of portfolioBlocks){
-    if (elem.getAttribute('id') === 'winter'){
-      elem.classList.add('selected')
-    }
-  }
-}
-buttonSpring.onclick = function(event){
-  document.querySelector('.portfolio__button.selected').classList.remove('selected');
-  document.querySelector('.portfolio__wrap.selected').classList.remove('selected');
-  event.target.classList.add('selected');
-  for (let elem of portfolioBlocks){
-    if (elem.getAttribute('id') === 'spring'){
-      elem.classList.add('selected')
-    }
-  }
-}
-buttonSummer.onclick = function(event){
-  document.querySelector('.portfolio__button.selected').classList.remove('selected');
-  document.querySelector('.portfolio__wrap.selected').classList.remove('selected');
-  event.target.classList.add('selected');
-  for (let elem of portfolioBlocks){
-    if (elem.getAttribute('id') === 'summer'){
-      elem.classList.add('selected')
-    }
-  }
-}
-buttonAutumn.onclick = function(event){
-  document.querySelector('.portfolio__button.selected').classList.remove('selected');
-  document.querySelector('.portfolio__wrap.selected').classList.remove('selected');
-  event.target.classList.add('selected');
-  for (let elem of portfolioBlocks){
-    if (elem.getAttribute('id') === 'autumn'){
-      elem.classList.add('selected')
-    }
+for (let button of seasonButtons){
+  button.onclick = function(event){
+      document.querySelector('.portfolio__button.selected').classList.remove('selected');
+      document.querySelector('.portfolio__wrap.selected').classList.remove('selected');
+      event.target.classList.add('selected');
+      for (let elem of portfolioBlocks){
+        if (elem.getAttribute('id') === button.getAttribute('id')){
+          elem.classList.add('selected')
+        }
+      }
   }
 }
 
