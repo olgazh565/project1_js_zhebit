@@ -94,6 +94,10 @@
         max-width: 490px; 
         margin: auto;                
     }
+    @media(max-width:375px){
+        max-width: 390px; 
+        margin: auto;                
+    }
 }    
 .portfolio__playbutton img{
     position: absolute;
