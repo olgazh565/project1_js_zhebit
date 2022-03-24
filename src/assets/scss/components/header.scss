@@ -91,7 +91,7 @@
         display: block;
         width: 50px;
         height: 28px;
-        margin-left: 30px;
+        margin-left: 25px;
         cursor: pointer;
     }
 }
@@ -124,6 +124,8 @@
 }
 .nav__lang_switcher{
     color: $secondary-color;
+    font-size: 20px;
+    cursor: pointer;
 }
 .nav__lang_switcher:hover{
     color: $third-color;
@@ -132,21 +134,25 @@
     color: $third-color;
 }
 .nav__theme_switch{
-    margin-left: 10px;
+    margin-left: 25px;
     width: 45px;
     height: 45px;
+    @media(max-width:525px){
+        text-align: center;
+    }   
+
 }
 .nav__light_switch{
-    margin-left: 10px;
     transition: 0.4s;
+    cursor: pointer;   
 }
 .nav__light_switch img:hover{
     content: url('../imgs/sun_g.svg');    
 }
-.nav__dark_switch{
-    margin-left: 10px;
+.nav__dark_switch{    
     transition: 0.4s;
     display: none;
+    cursor: pointer;
 }
 .nav__dark_switch img:hover{
     content: url('../imgs/moon_g.svg');
@@ -177,6 +183,10 @@
     padding-bottom: 20px;
     line-height: 40px;
     max-width: 35%;
+    @media(max-width:1024px){
+        max-width: 45%; 
+        height: 180px;      
+    }
     @media(max-width:768px){
         max-width: 60%;
         line-height: 24px;
@@ -206,7 +216,7 @@
     box-shadow: 0 0.5em 0.5em -0.4em #bdae82;
     transform: translatey(-0.65em);
     color: $secondary-color;
-    }
+    }  
     @media(max-width:768px){
         margin-top: 30px;
         margin-bottom: 130px;
