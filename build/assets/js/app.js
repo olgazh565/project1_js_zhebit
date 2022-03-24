@@ -130,8 +130,14 @@ function translateLanguage(){
 
   function chooseLanguage(){
     if (localStorage.getItem('russianLangOn') === 'true'){
+      englishLangButton.classList.remove('active');
+      russianLangButton.classList.add('active')
+
       switchToRussianLanguage()
     } else{
+      englishLangButton.classList.add('active');
+      russianLangButton.classList.remove('active')
+      
       switchToEnglishLanguage()
     }
   }
