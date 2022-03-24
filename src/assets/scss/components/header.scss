@@ -2,9 +2,7 @@
 
 .header{
     background: url("../imgs/bg.png") center/cover no-repeat;
-    // background-size: 100vw 110vh;
-    // background-position: top 0;
-    position: relative;
+    
     @media(max-width:768px){
         background: url("../imgs/bg_mobile.png") center no-repeat;
     }
@@ -16,9 +14,7 @@
         padding-bottom: 20px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        // position: fixed;
-        // top: 0;        
+        align-items: center;           
     }
 }
 .header__logo{
@@ -35,47 +31,42 @@
     display: flex;
     align-items: center;
 }
+.nav__wrapper{
+    position: relative;
+}
 .nav__menu{
     display: flex;
     justify-content: space-between;
-    scroll-behavior: smooth;    
+    scroll-behavior: smooth; 
+    
     @media(max-width:768px){
-        display: none;
-        // transform: translateX();
-        // transition: all 0.4s ease;
+        // display: none;
+        position: fixed;
+        right: -100%;  
+        top: 0px; 
+        transition: all 1s ease;
+        z-index: 999;
+        display: flex;        
+        flex-direction: column;
+        justify-content: flex-start;               
+        background-color: $primary-color;        
+        height: 100vh;
+        width: 50%;
+        padding-left: 50px;
+        padding-top: 100px;
+        font-size: 20px;
     }
 }  
 .nav__menu.active{
     @media(max-width:768px){
-        display: flex;        
-        flex-direction: column;
-        justify-content: flex-start;
-        position: absolute;
-        right: 0px;
-        top: 0px; 
-        background-color: $primary-color;        
-        height: 100vh;
-        width: 50%;
-        z-index: 999;
-        padding-left: 50px;
-        padding-top: 100px;
-        font-size: 20px;
-        // transform: translateX(0);
-        // transition: transform 0.4 ease;
-        // transition: all 1s;
-        
-        transform: translateX(0);
-        transition: all 0.4s ease;
+        right: 0px;        
     } 
     @media(max-width:600px){
         width: 70%;
     }
     @media(max-width:500px){
         width: 80%;
-    }
-    @media(max-width:400px){
-        width: 80%;
-    }
+    }   
 }
 .nav__link{
     @media(max-width:768px){
@@ -99,7 +90,7 @@
     @media(max-width:768px){
         width: 45px;
         height: 45px;
-        position: absolute;
+        position: absolute;        
         right: 65px;
         top: 25px;
         background-image: url('../imgs/close.svg');
@@ -139,8 +130,10 @@
     height: 45px;
     @media(max-width:525px){
         text-align: center;
+    } 
+    @media(max-width:320px){
+        margin-left: 15px;
     }   
-
 }
 .nav__light_switch{
     transition: 0.4s;
