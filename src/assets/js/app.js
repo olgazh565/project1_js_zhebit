@@ -86,59 +86,60 @@ const langArray = {
   }
 // ПЕРЕВОД ТЕКСТА-----------------------------------------
 
-const langButtons = document.querySelectorAll('.nav__lang_switcher')
+const langButtons = document.querySelectorAll('.nav__lang_switcher');
 
-for (let elem of langButtons){
-  elem.addEventListener('click', switchLanguage) 
+for (let elem of langButtons) {
+  elem.addEventListener('click', switchLanguage);
 }
 
-function switchLanguage(event){
+function switchLanguage(event) {
   
-  langButtons.forEach(e => e.classList.remove('active'))
+  langButtons.forEach(e => e.classList.remove('active'));
 
-  const chosenLanguage = langArray[event.target.getAttribute('id')]
+  const chosenLanguage = langArray[event.target.getAttribute('id')];
 
   document.querySelectorAll('[text]').forEach(elem => {
       elem.innerHTML = chosenLanguage[elem.getAttribute('text')]
-  })
+  });
 
-  event.target.classList.add('active')
+  event.target.classList.add('active');
   
-  localStorage.setItem('selectedLanguage', event.target.getAttribute('id'))
+  localStorage.setItem('selectedLanguage', event.target.getAttribute('id'));
 }
 
-const englishLangButton = document.getElementById('en')
-const russianLangButton = document.getElementById('ru')
+const englishLangButton = document.getElementById('en');
+const russianLangButton = document.getElementById('ru');
 
-function loadLanguage(){
-  if (localStorage.getItem('selectedLanguage') === 'ru'){
+function loadLanguage() {
+
+  if (localStorage.getItem('selectedLanguage') === 'ru') {
       
-    russianLangButton.click()
+    russianLangButton.click();
    
   } else{
       
-      englishLangButton.click()
+      englishLangButton.click();
   }
 }
-loadLanguage()
+loadLanguage();
 
 // СМЕНА БЛОКОВ КАРТИНОК --------------------------------
 
 const seasonButtons = document.querySelectorAll('.portfolio__button');
+const portfolioBlocks = document.querySelectorAll('.portfolio__wrap');
 
-const portfolioBlocks = document.querySelectorAll('.portfolio__wrap')
-
-for (let button of seasonButtons){
-  button.onclick = function(event){
+for (let button of seasonButtons) {
+  button.onclick = function(event) {
     
     document.querySelector('.portfolio__button.selected').classList.remove('selected');
     document.querySelector('.portfolio__wrap.selected').classList.remove('selected');
     
     event.target.classList.add('selected');
 
-    for (let elem of portfolioBlocks){
+    for (let elem of portfolioBlocks) {
+
       if (elem.getAttribute('id') === button.getAttribute('text')){
-        elem.classList.add('selected')
+        elem.classList.add('selected');
       }
     }
   }
@@ -146,84 +147,88 @@ for (let button of seasonButtons){
 
 // Смена темы страницы с темной на светлую ------------------
 
-const lightThemeButton = document.querySelector('.nav__light_switch')
-const darkThemeButton = document.querySelector('.nav__dark_switch')
-const html = document.querySelector('html')
+const lightThemeButton = document.querySelector('.nav__light_switch');
+const darkThemeButton = document.querySelector('.nav__dark_switch');
+const html = document.querySelector('html');
 
-lightThemeButton.addEventListener('click', changeToLightTheme)
+lightThemeButton.addEventListener('click', changeToLightTheme);
 
-function changeToLightTheme(event){
+function changeToLightTheme(event) {
     
-  html.classList.add('light')    
+  html.classList.add('light');  
     
-  localStorage.setItem('lightThemeOn', true)
+  localStorage.setItem('lightThemeOn', true);
 
   darkThemeButton.style.display = 'block';
   lightThemeButton.style.display = 'none';    
 }
 
-darkThemeButton.addEventListener('click', changeToDarkTheme)
+darkThemeButton.addEventListener('click', changeToDarkTheme);
 
-function changeToDarkTheme(event){
+function changeToDarkTheme(event) {
     
-  html.classList.remove('light')        
+  html.classList.remove('light');        
   
-  localStorage.setItem('lightThemeOn', false)
+  localStorage.setItem('lightThemeOn', false);
   
   darkThemeButton.style.display = 'none';
   lightThemeButton.style.display = 'block';    
 }
 
-function chooseTheme(){
-  if (localStorage.getItem('lightThemeOn') === 'true'){
-    changeToLightTheme()
-  } else{
-    changeToDarkTheme()
+function chooseTheme() {
+
+  if (localStorage.getItem('lightThemeOn') === 'true') {
+    changeToLightTheme();
+
+  } else {
+    changeToDarkTheme();
   }
 } 
 
-chooseTheme()
+chooseTheme();
 
 
 // Burger-menu -----------------------------------------
 
-const menu = document.querySelector('.nav__menu')
+const menu = document.querySelector('.nav__menu');
 const openMenuButton = document.querySelector('.nav__mobile_button');
-const closeMenuButton = document.querySelector('.nav__close_mobile')
+const closeMenuButton = document.querySelector('.nav__close_mobile');
 
-openMenuButton.onclick = function(){
-  menu.classList.add('active')
+openMenuButton.onclick = function() {
+  menu.classList.add('active');
 }
 
-closeMenuButton.onclick = function(){
-  menu.classList.remove('active')
+closeMenuButton.onclick = function() {
+  menu.classList.remove('active');
 }
 
 // Валидация формы --------------------------------------------
 
-const form = document.querySelector('.form__contact')
-const formInputs = form.elements
-const button = document.querySelector('.form__button')
+const form = document.querySelector('.form__contact');
+const formInputs = form.elements;
+const button = document.querySelector('.form__button');
 
-for (let element of formInputs){
-  element.oninput = function(event){
+for (let element of formInputs) {
+  element.oninput = function(event) {
+
     if (!event.target.value){
-      event.target.classList.add('error')
-    } else{
-      event.target.classList.remove('error')
+      event.target.classList.add('error');
+    } else {
+      event.target.classList.remove('error');
     }
   }
 }
 
-form.onsubmit = function(event){
-  event.preventDefault()
-  for (let element of formInputs){
+form.onsubmit = function(event) {
+  event.preventDefault();
+  for (let element of formInputs) {
+
     if (!element.value) {
-      element.classList.add('error')
-    } else{
-      element.classList.remove('error')
+      element.classList.add('error');
+    } else {
+      element.classList.remove('error');
     }
   }
-  form.reset()
+  form.reset();
 }
 
