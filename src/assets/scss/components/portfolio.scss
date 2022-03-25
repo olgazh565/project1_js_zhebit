@@ -63,8 +63,8 @@
     height: 100%;
     @media(max-width:770px){        
         margin: 0 auto; 
-        width: auto;
-        height: auto;     
+        max-width: 450px;
+        max-height: auto;     
     }
 }
 .portfolio__video{
