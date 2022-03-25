@@ -81,4 +81,67 @@ const langArray = {
     }
   }
   export default langArray;
+
+  // Переключение языка вариант 1
+// const englishLangButton = document.querySelector('.en')
+// const russianLangButton = document.querySelector('.ru')
+
+// function translateLanguage(){
+
+//   russianLangButton.addEventListener('click', switchToRussianLanguage)
+
+//   function switchToRussianLanguage(event){
+       
+//     let russianLang = langArray['ru'];
+//     document.querySelectorAll('[text]').forEach(elem => {
+//       elem.innerHTML = russianLang[elem.getAttribute('text')]
+//     })
+
+//     localStorage.setItem('russianLangOn', true)
+//     changeActiveClassRu()
+//   }
+
+//   englishLangButton.addEventListener('click', switchToEnglishLanguage)
+
+//   function switchToEnglishLanguage(event){
+
+//     let englishLang = langArray['en'];
+//     document.querySelectorAll('[text]').forEach(elem => {
+//       elem.innerHTML = englishLang[elem.getAttribute('text')]
+//     })
+
+//     localStorage.setItem('russianLangOn', false)
+//     changeActiveClassEn()
+//   }
+    
+//   function changeActiveClassRu(){
+       
+//     englishLangButton.classList.remove('active');
+//     russianLangButton.classList.add('active');
+//   }
+
+//   function changeActiveClassEn(){
+
+//     englishLangButton.classList.add('active');
+//     russianLangButton.classList.remove('active');
+//   }
+  
+
+//   function chooseLanguage(){
+//     if (localStorage.getItem('russianLangOn') === 'true'){
+      
+//       switchToRussianLanguage()
+//       changeActiveClassRu()
+
+//     } else{
+      
+//       switchToEnglishLanguage()
+//       changeActiveClassEn()
+//     }
+//   }
+
+//   chooseLanguage()
+// } 
+
+// translateLanguage()
   

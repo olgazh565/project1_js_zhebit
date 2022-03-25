@@ -84,72 +84,45 @@ const langArray = {
       'send-message': 'Отправить'
     }
   }
-    // ПЕРЕВОД ТЕКСТА
+// ПЕРЕВОД ТЕКСТА-----------------------------------------
 
-const englishLangButton = document.querySelector('.en')
-const russianLangButton = document.querySelector('.ru')
+const langButtons = document.querySelectorAll('.nav__lang_switcher')
 
-function translateLanguage(){
+for (let elem of langButtons){
+  elem.addEventListener('click', switchLanguage) 
+}
 
-  russianLangButton.addEventListener('click', switchToRussianLanguage)
-
-  function switchToRussianLanguage(event){
-       
-    let russianLang = langArray['ru'];
-    document.querySelectorAll('[text]').forEach(elem => {
-      elem.innerHTML = russianLang[elem.getAttribute('text')]
-    })
-
-    localStorage.setItem('russianLangOn', true)
-    changeActiveClassRu()
-  }
-
-  englishLangButton.addEventListener('click', switchToEnglishLanguage)
-
-  function switchToEnglishLanguage(event){
-
-    let englishLang = langArray['en'];
-    document.querySelectorAll('[text]').forEach(elem => {
-      elem.innerHTML = englishLang[elem.getAttribute('text')]
-    })
-
-    localStorage.setItem('russianLangOn', false)
-    changeActiveClassEn()
-  }
-    
-  function changeActiveClassRu(){
-       
-    englishLangButton.classList.remove('active');
-    russianLangButton.classList.add('active');
-  }
-
-  function changeActiveClassEn(){
-
-    englishLangButton.classList.add('active');
-    russianLangButton.classList.remove('active');
-  }
+function switchLanguage(event){
   
+  langButtons.forEach(e => e.classList.remove('active'))
 
-  function chooseLanguage(){
-    if (localStorage.getItem('russianLangOn') === 'true'){
-      
-      switchToRussianLanguage()
-      changeActiveClassRu()
+  const chosenLanguage = langArray[event.target.getAttribute('id')]
 
-    } else{
+  document.querySelectorAll('[text]').forEach(elem => {
+      elem.innerHTML = chosenLanguage[elem.getAttribute('text')]
+  })
+
+  event.target.classList.add('active')
+  
+  localStorage.setItem('selectedLanguage', event.target.getAttribute('id'))
+}
+
+const englishLangButton = document.getElementById('en')
+const russianLangButton = document.getElementById('ru')
+
+function loadLanguage(){
+  if (localStorage.getItem('selectedLanguage') === 'ru'){
       
-      switchToEnglishLanguage()
-      changeActiveClassEn()
-    }
+    russianLangButton.click()
+   
+  } else{
+      
+      englishLangButton.click()
   }
+}
+loadLanguage()
 
-  chooseLanguage()
-} 
-
-translateLanguage()
-
-
-// СМЕНА БЛОКОВ КАРТИНОК
+// СМЕНА БЛОКОВ КАРТИНОК --------------------------------
 
 const seasonButtons = document.querySelectorAll('.portfolio__button');
 
@@ -157,9 +130,12 @@ const portfolioBlocks = document.querySelectorAll('.portfolio__wrap')
 
 for (let button of seasonButtons){
   button.onclick = function(event){
+    
     document.querySelector('.portfolio__button.selected').classList.remove('selected');
     document.querySelector('.portfolio__wrap.selected').classList.remove('selected');
+    
     event.target.classList.add('selected');
+
     for (let elem of portfolioBlocks){
       if (elem.getAttribute('id') === button.getAttribute('text')){
         elem.classList.add('selected')
@@ -168,55 +144,49 @@ for (let button of seasonButtons){
   }
 }
 
-// Смена темы страницы с темной на светлую
+// Смена темы страницы с темной на светлую ------------------
 
 const lightThemeButton = document.querySelector('.nav__light_switch')
 const darkThemeButton = document.querySelector('.nav__dark_switch')
-const darkThemeImg = document.querySelector('.nav__dark_switch img')
-const lightThemeImg = document.querySelector('.nav__light_switch img')
 const html = document.querySelector('html')
 
-function changeTheme(){
+lightThemeButton.addEventListener('click', changeToLightTheme)
 
-  lightThemeButton.addEventListener('click', changeToLightTheme)
-
-  function changeToLightTheme(event){
+function changeToLightTheme(event){
     
-    html.classList.add('light')    
+  html.classList.add('light')    
     
-    localStorage.setItem('lightThemeOn', true)
+  localStorage.setItem('lightThemeOn', true)
 
-    darkThemeButton.style.display = 'block';
-    lightThemeButton.style.display = 'none';    
-  }
-
-  darkThemeButton.addEventListener('click', changeToDarkTheme)
-
-  function changeToDarkTheme(event){
-    
-    html.classList.remove('light')        
-  
-    localStorage.setItem('lightThemeOn', false)
-  
-    darkThemeButton.style.display = 'none';
-    lightThemeButton.style.display = 'block';    
-  }
-
-  function chooseTheme(){
-    if (localStorage.getItem('lightThemeOn') === 'true'){
-      changeToLightTheme()
-    } else{
-      changeToDarkTheme()
-    }
-  } 
-
-  chooseTheme()
+  darkThemeButton.style.display = 'block';
+  lightThemeButton.style.display = 'none';    
 }
 
-changeTheme()
+darkThemeButton.addEventListener('click', changeToDarkTheme)
+
+function changeToDarkTheme(event){
+    
+  html.classList.remove('light')        
+  
+  localStorage.setItem('lightThemeOn', false)
+  
+  darkThemeButton.style.display = 'none';
+  lightThemeButton.style.display = 'block';    
+}
+
+function chooseTheme(){
+  if (localStorage.getItem('lightThemeOn') === 'true'){
+    changeToLightTheme()
+  } else{
+    changeToDarkTheme()
+  }
+} 
+
+chooseTheme()
 
 
-// Burger-menu
+// Burger-menu -----------------------------------------
+
 const menu = document.querySelector('.nav__menu')
 const openMenuButton = document.querySelector('.nav__mobile_button');
 const closeMenuButton = document.querySelector('.nav__close_mobile')
@@ -229,7 +199,7 @@ closeMenuButton.onclick = function(){
   menu.classList.remove('active')
 }
 
-// Валидация формы
+// Валидация формы --------------------------------------------
 
 const form = document.querySelector('.form__contact')
 const formInputs = form.elements
@@ -256,3 +226,4 @@ form.onsubmit = function(event){
   }
   form.reset()
 }
+
